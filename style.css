@@ -5,7 +5,6 @@
 :root {
     --color-primary: #7380ec;
     --color-danger: #ff7782;
-    --color-danger-logo: #BD080B;
     --color-success: #41f1b6;
     --color-warning:#ffbb55;
     --color-white: #fff;
@@ -26,6 +25,15 @@
     --padding-1: 1.2rem;
 
     --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* DARK THEME VARIABLES */
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow:0 2rem 3rem var(--color-light);
 }
 
 *{
@@ -58,7 +66,6 @@ body{
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
-    /* background: red; */
     grid-template-columns: 14rem auto 23rem;
 }
 
@@ -137,11 +144,9 @@ b{
 
 aside{
     height: 100vh;
-    /* background: gray; */
 }
 
 aside .top{
-    /* background-color: white; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -166,7 +171,6 @@ aside .close {
 /* SIDEBAR  */
 
 aside .sidebar{
-    /* background: white; */
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -236,7 +240,6 @@ aside .sidebar .message-count{
 
 /* MAIN  */
 main {
-    /* background: #41f1b6; */
     margin-top: 1.4rem;
 }
 
@@ -290,7 +293,6 @@ main .insights > div.income span {
 }
 
 main .insights > div .middle {
-    /* background-color: #363949; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -302,7 +304,6 @@ main .insights h3 {
 }
 
 main .insights .progress {
-    /* background: #41f1b6; */
     position: relative;
     width: 92px;
     height: 92px;
@@ -310,7 +311,6 @@ main .insights .progress {
 }
 
 main .insights svg {
-    /* background: #41f1b6; */
     width: 7rem;
     height: 7rem;
 }
@@ -404,15 +404,10 @@ main .recent-orders a {
 }
 
 .right .top {
-    /* background: #677483; */
     display: flex;
     justify-content: end;
     gap: 2rem;
 }
-
-/* .right .top button span{
-    border: none;
-} */
 
 .right .top button {
     border: none;
@@ -607,7 +602,7 @@ main .recent-orders a {
 
     aside{
         position: fixed;
-        left: 0;
+        left: -100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -615,6 +610,13 @@ main .recent-orders a {
         height: 100vh;
         padding: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;   /* animação do menu mobile */
+    }
+
+    @keyframes showMenu {     /* animação do menu mobile */
+        to{
+            left: 0;
+        }
     }
 
     aside .logo{
