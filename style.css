@@ -644,6 +644,7 @@ main .recent-orders a {
     aside .close{
         display: inline-block;
         cursor: pointer;
+        margin-left: 25px;
     }
 
     main {
